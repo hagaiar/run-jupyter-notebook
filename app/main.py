@@ -2,6 +2,7 @@ from typing import Union
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.responses import FileResponse
+import awswrangler as wr
 
 import papermill as pm
 
@@ -35,5 +36,5 @@ def activate_python_notebook(parameters_for_notebook: Nb_params
             , country_limit=dict_of_params['country_limit'])
     )
 
-    # TODO: try to first copy the file from s3 to local and then return it
-    return FileResponse('s3://aiola-469190457957-h-playground/images/flights_by_country.png')
+    wr.download(path='s3://aiola-469190457957-h-playground/images/flights_by_country.png', local_file='flights_by_country.png')
+    return FileResponse('flights_by_country.png')
