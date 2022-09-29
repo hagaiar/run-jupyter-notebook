@@ -5,7 +5,9 @@ papermill==2.4.0
 requests==2.28.1
 ipython==7.34.0
 ipykernel==6.16.0
+# for fastapi
 fastapi==0.68.0
 pydantic==1.9.0
 uvicorn==0.15.0
+aiofiles==22.1.0
 
