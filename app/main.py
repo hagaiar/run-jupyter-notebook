@@ -36,5 +36,5 @@ def activate_python_notebook(parameters_for_notebook: Nb_params
             , country_limit=dict_of_params['country_limit'])
     )
 
-    wr.download(path='s3://aiola-469190457957-h-playground/images/flights_by_country.png', local_file='flights_by_country.png')
+    wr.download(path='s3://aiola-469190457957-h-playground/images/flights_by_country.png', local_file='app/main/flights_by_country.png')
     return FileResponse('flights_by_country.png')
