@@ -10,7 +10,7 @@ app = FastAPI()
 
 class Nb_params(BaseModel):
     limit: int = 1000
-    country_limit: int = 15
+    country_limit: int = 12
 
 @app.get("/")
 def read_root():
