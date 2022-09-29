@@ -10,7 +10,7 @@ app = FastAPI()
 
 class Nb_params(BaseModel):
     limit: int = 1000
-    country_limit: int = 12
+    country_limit: int = 15
 
 @app.get("/")
 def read_root():
@@ -24,7 +24,7 @@ def read_item(item_id: int, q: Union[str, None] = None):
 
 @app.post("/activate_python_notebook")
 def activate_python_notebook(parameters_for_notebook: Nb_params
-    , notebook_src: str='s3://aiola-469190457957-h-playground/misc/num_flights_by_country.ipynb'
+    , notebook_source: str='s3://aiola-469190457957-h-playground/misc/num_flights_by_country.ipynb'
     , notebook_target: str='s3://aiola-469190457957-h-playground/misc/jupyter_notebooks_outputs/num_of_flights_by_country.ipynb'):
 
     dict_of_params = dict(parameters_for_notebook)
